@@ -1,0 +1,187 @@
+#drop table review
+CREATE TEMPORARY TABLE IF NOT EXISTS review 
+	AS (SELECT id, title, abstract, CONCAT( COALESCE(title,' '),  ' ', COALESCE(keywords,''), ' ', COALESCE(abstract,'')  ) AS texto, 
+			CASE
+			    WHEN source = "CatalogoTeses" THEN document_url 
+			    WHEN source = "IEEE" THEN CONCAT( 'http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=', COALESCE(source_id,' ')) 
+			END as url,
+			citation_count, download_count, year 
+			FROM document where duplicate = 0 and authors is not null
+		)
+
+select 
+r.id,
+source, 
+title_slug, 
+r.title, 
+r.abstract, 
+r.texto, 
+r.citation_count, 
+r.download_count, 
+r.year, 
+d.document_url, 
+r.url
+from review r
+inner join document d on d.id = r.id
+where texto is not null
+and (texto like "%AAL%" OR "%Ambient Assisted Living%" OR "%ambient%" OR "%assisted%" OR "%assistive%" OR "%living%" OR "%environment%") 
+and (texto like "%quality%" OR "%non-functional%" OR "%Requirement%" OR "%NFR%") 
+and (texto like "%specification%" OR "%model%")
+#and (r.citation_count is not null and r.citation_count > 0)
+#order by r.citation_count desc, r.download_count desc
+
+
+#and (texto like "%NFR%" OR "%non-functional requirements%" OR "%specification%" OR "%model%" OR "%AAL%" OR "%ambient%" OR "%assisted%" OR "%assistive%" OR "%living%" OR "%environment%") 
+#and r.title = "A Modelling Framework for Ambient Assisted Living Validation"
+and (texto like "%Ambient Assisted Living%")
+#and (texto like "%specification%" OR "%model%")
+
+http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7987536
+
+- O que � industria 4.0 na IoT
+- Os desafios da �rea de IoMT
+
+elderly
+ageing 
+disabled people
+elder people
+
+
+## Conversa com fernanda em Setembro
+Quais tipos de doenças podem ser mapeadas para um publico idoso e com essas informações usar uma inteligente para monitorar essas informações deep learning e Algoritmo genético.
+
+Entender as doenças masculinas e femininas
+
+Verificar ferramentas como medir pressao ou glicose com o historico do que esta acontecendo com o paciente 
+
+Como vou resolver isso 
+
+Eficiencia de algoritmo para dentro de um embarcado (com informacoes limitadas) 
+
+Deep learning em hardware
+Algorito genetico em hardware reduzido;
+
+Verificar os possiveis devices as limitações de hardware
+
+
+Adicionar manualmente no mapeamento
+- Problemas: Armazenamento de dados
+- O como fazer isso?
+- Se é que o povo faz os projetos?
+- Como é que as pessaos estão especificando os projetos para esse publico?
+- Verificação de usabilidade nas propostas desses artigos;
+
+- 8:21 AM 9/17/2018
+- usabilidade é fundamental para esse tipo de publico;
+
+- Ao final dessas leituras eu devo: Saber quais os problemas em abertos desses trabalhos e propor algo de novo com base nos problemas em aberto.
+- O foco esta em o como, como propor?
+- Processo de Desenvolvimento;
+- Processo de Avaliação (Do sistema como um todo);
+- Processo de Especificação;
+
+- Tecnologia Assistida para idoso;
+- Como esta usando a tecnologia para ajudar o idoso;
+- Melhoria do algoritimo proposto nos trabalhos;
+
+
+
+
+
+("AAL" OR "Ambient Assist Live" OR "ambient-assisted living" OR "Ambient Assisted Living" ) AND ("non-functional requirements" OR "non-functional requirement")  AND ("specification" OR "model" OR "modeling")
+
+("Assistive technology" OR "ambient assisted" OR "assisted living" OR "ambient assistance") AND ("non-functional requirements" OR "non-functional requirement") AND ("specification" OR "model" OR "modeling")
+
+("assisted environment" OR "assistive environment" OR "AAL environment" OR "independent living") AND ("non-functional requirements" OR "non-functional requirement") AND ("specification" OR "model" OR "modeling")
+
+("assisted life" OR "intelligent living" OR "pervasive living" OR "assistive environments") AND ("non-functional requirements" OR "non-functional requirement") AND ("specification" OR "model" OR "modeling")
+
+
+("AAL environments" OR "assisted environments") AND ("non-functional requirements" OR "non-functional requirement") AND ("specification" OR "model" OR "modeling")
+
+
+########################
+
+("AAL" OR "Ambient Assist Live" OR "ambient-assisted living" OR "Ambient Assisted Living" ) AND ("nonfunctional requirements" OR "NFR") AND ("specification" OR "model" OR "modeling")
+
+("Assistive technology" OR "ambient assisted" OR "assisted living" OR "ambient assistance") AND ("nonfunctional requirements" OR "NFR") AND ("specification" OR "model" OR "modeling")
+
+("assisted environment" OR "assistive environment" OR "AAL environment" OR "independent living") AND ("nonfunctional requirements" OR "NFR") AND ("specification" OR "model" OR "modeling")
+
+("assisted life" OR "intelligent living" OR "pervasive living" OR "assistive environments") AND ("nonfunctional requirements" OR "NFR") AND ("specification" OR "model" OR "modeling")
+
+("AAL environments" OR "assisted environments") AND ("nonfunctional requirements" OR "NFR") AND ("specification" OR "model" OR "modeling")
+
+
+
+
+
+MacBook Pro (16-inch, 2019)
+Processador Intel Core i7 6-core de 9.ª geração a 2,6 GHz
+Turbo Boost até 4,5 GHz
+AMD Radeon Pro 5300M com 4 GB de memória GDDR6
+16 GB de memória DDR4 a 2666 MHz
+512 GB de armazenamento SSD¹
+Ecrã Retina de 16 polegadas com True Tone
+Magic Keyboard
+Touch Bar e Touch ID
+Quatro portas Thunderbolt 3
+Cobertura de reparações e assistência (Apple): 27 de junho de 2021
+Garantia contra Danos Acidentais, Roubo e Furto (Seguradora): 27 junho de 2021
+Garantia Estendida (iStore): junho de 2025
+Vem com: Capa rígida Incase para MacBook Pro de 16 pol. e Teclado Apple USB
+
+
+
+(
+    
+    ("AAL" OR "Ambient Assisted Living" OR "ambient assisted" OR "ambient assistance" OR "assisted environment" OR "assistive environment" OR "AAL environment" OR "independent living" OR "assisted life" OR "intelligent living" OR "pervasive living" OR "assistive environments" OR "AAL environments" OR "assisted environments") 
+    
+    AND 
+    
+    ("quality model" OR "quality attribute" OR "non-functional property" OR "Non-Functional Requirements" OR "quality requirement" OR "quality models" OR "quality attributes" OR "non-functional properties" OR "non-functional requirements" OR "quality requirements" OR "NFR") 
+    
+    AND ("specification" OR "model" OR "modeling" OR "modelling"))
+
+
+("AAL" OR "Ambient Assisted Living" OR "ambient*")
+
+
+("AAL" OR "ambient?" OR "assisted?" OR "assistive?" OR "?living")
+
+
+("AAL" OR "Ambient Assisted?")
+
+Fall Detection for Independently Living Older People Utilizing Machine Learning
+
+
+("AAL" OR "Ambient Assisted" OR "ambient assistance" OR "environment" OR "independent living" OR "assisted life" OR "intelligent living" OR "pervasive living") AND (NFR OR "non-functional")
+
+
+
+    ("AAL" OR "ambient assist" OR "assist environment" OR "living" OR "assisted life" OR "pervasive living") AND ("NFR" OR "non-functional" OR "quality model" OR "quality attribute" OR "quality requirement")
+
+
+    ("AAL" OR "ambient assist" OR "assist environment" OR "living" OR "assisted life" OR "pervasive living") AND ("NFR" OR "non-functional" "quality model" OR "quality attribute" OR "quality requirement")
+
+
+
+
+("AAL" OR "ambient assist" OR "assist environment" OR "independent living" OR "assisted life" OR "intelligent living" OR "pervasive living" OR "Assistive Software") AND ("NFR")
+
+("AAL" OR "ambient assist" OR "assist environment" OR "independent living" OR "assisted life" OR "intelligent living" OR "pervasive living" OR "Assistive Software") AND ("non-functional")
+
+("AAL" OR "ambient assist" OR "assist environment" OR "independent living" OR "assisted life" OR "intelligent living" OR "pervasive living" OR "Assistive Software") AND ("quality model")
+
+("AAL" OR "ambient assist" OR "assist environment" OR "independent living" OR "assisted life" OR "intelligent living" OR "pervasive living" OR "Assistive Software") AND ("quality attribute") 
+
+("AAL" OR "ambient assist" OR "assist environment" OR "independent living" OR "assisted life" OR "intelligent living" OR "pervasive living" OR "Assistive Software") AND ("quality requirement")
+
+
+http://localhost/crawler-elsevier-sciencedirect/get_bibtex.php?file=string1.bib&results=57&query=
+http://localhost/crawler-elsevier-sciencedirect/get_bibtex.php?file=string1.bib&results=57&query=("AAL" OR "ambient assist" OR "assist environment" OR "independent living" OR "assisted life" OR "intelligent living" OR "pervasive living" OR "Assistive Software") AND ("NFR")
+
+
+
+
+Modeling and verification of Functional and Non-Functional Requirements of ambient Self-Adaptive Systems

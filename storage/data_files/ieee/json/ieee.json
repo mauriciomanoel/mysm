@@ -1,0 +1,17 @@
+[
+	{
+		"id": "7545979",
+		"source_id": "7545979",
+		"type": "inproceedings",
+		"title": "A Quality Model for AAL Software Systems",
+		"author": "L. Garcés and F. Oquendo and E. Y. Nakagawa",
+		"keywords": "assisted living;geriatrics;handicapped aids;IEC standards;ISO standards;AAL software systems;ambient assisted living;elders;patients with chronic conditions;disabled people;informatics and communication technologies;quality attributes;ISO/IEC 25010 standards;QM4AAL quality model;health status monitoring systems;health care system;Stakeholders;IEC Standards;ISO Standards;Adaptive systems;Ambient assisted living;Software;Monitoring;Healthcare System;Ambient Assisted Living;Quality Model;Quality Attribute;ISO/IEC 25010;Smart Technologies;Adaptivity;System-of-systems",
+		"doi": "10.1109/CBMS.2016.46",
+		"abstract": "The Ambient Assisted Living (AAL) domain aims to support the daily life activities of elders, patients with chronic conditions or disabled people, with a focus on ICT (Informatics and Communication Technologies). Important advances in AAL software systems have been already made, assisting people in their home, work, and social environments. Because of their critical nature, these systems must be developed focused on their quality. Hence, quality attributes (QAs), such as safety, reliability, and security, must be identified and well defined to successfully achieve the system purposes. However, there is not a set of QAs specific for AAL systems, hence, new systems have been developed based on general standards, such as ISO/IEC 25010, or based on particular experiences. This paper introduces the QM4AAL, a quality model (QM) for AAL systems. The QM4AAL was established and evaluated based on evidence from several published works found through conduction of a systematic mapping study. As result, the QM4AAL details QAs requirements, adaptive (e.g., self-configuring or situation-aware) or static properties, and stakeholders of AAL systems and their constituents systems (e.g., activity monitoring or health status monitoring systems). We intend this QM can orient the design and assessment of current and future AAL systems.",
+		"pages": "175-180",
+		"year": "2016",
+		"url_article": "https://doi.org/10.1109/CBMS.2016.46",
+		"month": "June",
+		"volume": ""
+	}
+]
